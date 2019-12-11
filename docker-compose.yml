@@ -1,0 +1,31 @@
+
+
+version: '3'
+
+services: 
+  live:
+    
+    build: /path/to/Dockerfile
+    image: anyungu/<imageNameInTheRemoteRepo>:<image-tag>
+   
+
+
+  test:
+    
+    build: /path/to/same/Dockerfile
+    image: anyungu/<differentImageNameInTheRemoteRepo>:<different-image-tag>
+	#this will enable you to tag the same image differently
+	#you will be able to push the same image to different dockerhub repos
+   
+
+
+  home:
+  
+      build: /path/to/another/Dockerfile/in/another/Project
+      image: anyungu/<imageNameInTheRemoteRepo>:<image-tag>
+
+
+#docker-compose build >>> will build the 3 images locally
+#docker-compose push >>> will push the 3 images to the respective repositories in the image key value
+
+      

@@ -1,0 +1,37 @@
+version: '3'
+
+services: 
+  tayari:
+    
+    image: anyungu/<imageNameInTheRepo>:<imageTagInTheRepo>
+    ports: 
+      - "9200:8080"
+	#map the port. This container will be accessible via port 9200
+    volumes: 
+      - /home:/home
+	#volumes. Files in this container will be stored in the /home location of the server
+    environment: 
+      ip: x.x.x.x
+      db: musicDatabase
+      	#will pass this as container environment variables to your code
+    container_name: tayari
+	#name of container
+
+
+
+###########################################
+
+#docker-compose up >>> will start the containers in attach mode. If the images are not available locally, they will be pulled from docker hub.
+#docker-compose start/stop >> will start/stop the containers
+#docker-compose logs >> view all containers logs
+#docker-compose rm >> remove all containers
+
+
+
+###########################################
+#to run multiple containers in the same servers just have several services eg tayari, second, third etc
+
+
+  
+
+  
